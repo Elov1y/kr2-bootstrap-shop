@@ -1,0 +1,66 @@
+/* Основные цвета Bootstrap */
+:root {
+    --bs-primary: #6f42c1;
+    --bs-primary-rgb: 111, 66, 193;
+
+    --bs-link-color: #6f42c1;
+    --bs-link-color-rgb: 111, 66, 193;
+
+    --bs-link-hover-color: #59359a;
+    --bs-link-hover-color-rgb: 89, 53, 154;
+
+    --bs-body-color: #292334;
+    --bs-body-bg: #f8f6fc;
+
+    --bs-dark-rgb: 38, 29, 53;
+}
+
+/* Общие настройки страницы */
+body {
+    min-height: 100vh;
+}
+
+/* Промоблок рядом с главным заголовком */
+.placeholder-box {
+    min-height: 240px;
+}
+
+/* Основные кнопки */
+.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #6f42c1;
+    --bs-btn-border-color: #6f42c1;
+
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #59359a;
+    --bs-btn-hover-border-color: #59359a;
+
+    --bs-btn-focus-shadow-rgb: 111, 66, 193;
+
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #4b2d82;
+    --bs-btn-active-border-color: #4b2d82;
+
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #6f42c1;
+    --bs-btn-disabled-border-color: #6f42c1;
+}
+
+/* Кнопки с контуром */
+.btn-outline-primary {
+    --bs-btn-color: #6f42c1;
+    --bs-btn-border-color: #6f42c1;
+
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #6f42c1;
+    --bs-btn-hover-border-color: #6f42c1;
+
+    --bs-btn-focus-shadow-rgb: 111, 66, 193;
+
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #59359a;
+    --bs-btn-active-border-color: #59359a;
+
+    --bs-btn-disabled-color: #6f42c1;
+    --bs-btn-disabled-border-color: #6f42c1;
+}
