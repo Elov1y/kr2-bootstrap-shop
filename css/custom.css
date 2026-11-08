@@ -64,3 +64,45 @@ body {
     --bs-btn-disabled-color: #6f42c1;
     --bs-btn-disabled-border-color: #6f42c1;
 }
+
+/* Добавление розовой кнопки */
+.btn-pink {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #b83280;
+    --bs-btn-border-color: #b83280;
+
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #972969;
+    --bs-btn-hover-border-color: #972969;
+
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #7b2256;
+    --bs-btn-active-border-color: #7b2256;
+
+    --bs-btn-focus-shadow-rgb: 184, 50, 128;
+
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #b83280;
+    --bs-btn-disabled-border-color: #b83280;
+}
+
+/* Добавление оранжевой кнопки */
+.btn-orange {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #ff9800;
+    --bs-btn-border-color: #ff9800;
+
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #ed8900;
+    --bs-btn-hover-border-color: #ed8900;
+
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #db7e00;
+    --bs-btn-active-border-color: #db7e00;
+
+    --bs-btn-focus-shadow-rgb: 255, 152, 0;
+
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #ff9800;
+    --bs-btn-disabled-border-color: #ff9800;
+}
