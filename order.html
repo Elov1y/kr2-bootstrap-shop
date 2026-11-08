@@ -109,23 +109,24 @@
                             oninput="document.getElementById('orderDemoMessage').hidden = true;"
                             onreset="document.getElementById('orderDemoMessage').hidden = true;"
                         >
-                            <div class="row g-3">
-                                <div class="col-12 col-md-6">
-                                    <label class="form-label" for="order-name">
-                                        Имя *
-                                    </label>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="order-name">
+                                    Имя и фамилия *
+                                </label>
 
-                                    <input
-                                        class="form-control"
-                                        id="order-name"
-                                        name="name"
-                                        type="text"
-                                        minlength="2"
-                                        autocomplete="given-name"
-                                        placeholder="Например, Алексей"
-                                        required
-                                    >
-                                </div>
+                                <input
+                                    class="form-control"
+                                    id="order-name"
+                                    name="name"
+                                    type="text"
+                                    minlength="3"
+                                    autocomplete="name"
+                                    placeholder="Иван Иванов"
+                                    pattern="\s*\S+(\s+\S+)+\s*"
+                                    title="Введите имя и фамилию через пробел"
+                                    required
+                                >
+                            </div>
 
                                 <div class="col-12 col-md-6">
                                     <label class="form-label" for="order-email">
@@ -183,11 +184,11 @@
                                         <option value="orion-x8">
                                             Процессор Orion X8
                                         </option>
-                                        <option value="nebula-g16">
-                                            Видеокарта Nebula G16
+                                        <option value="abdula-g16-pro">
+                                            Видеокарта Abdula G16 Pro
                                         </option>
-                                        <option value="pulsar-ddr5">
-                                            Память Pulsar DDR5
+                                        <option value="luchick-6-classic-edition">
+                                            Память Luchick 6 Classic Edition
                                         </option>
                                     </select>
                                 </div>

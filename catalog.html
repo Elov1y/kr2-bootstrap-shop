@@ -100,135 +100,324 @@
     </nav>
 
     <main class="container my-5">
-        <div class="alert alert-info" role="alert">
-            Здесь представлены имеющиеся в наличии комплектующие для ПК.
-        </div>
+        <nav aria-label="Хлебные крошки">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Главная</a>
+                </li>
 
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-            <h1 class="h2 mb-0">Каталог комплектующих</h1>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Каталог
+                </li>
+            </ol>
+        </nav>
 
-            <a class="btn btn-outline-primary" href="order.html">
-                Оформить заявку
-            </a>
-        </div>
+        <h1 class="h2 mb-4">Каталог комплектующих</h1>
 
         <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="card h-100 shadow-sm">
-                    <div class="bg-light border-bottom p-4 text-center">
-                        <p class="h4 mb-1">ORION X8</p>
-                        <p class="text-muted mb-0">Процессор</p>
-                    </div>
+            <aside class="col-12 col-lg-3" aria-labelledby="filtersTitle">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4 mb-4" id="filtersTitle">
+                            Фильтры
+                        </h2>
 
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="badge bg-success">Новинка</span>
-                        </div>
+                        <form id="filtersForm">
+                            <fieldset class="border rounded p-3 mb-3">
+                                <legend class="float-none w-auto fs-6 px-2">
+                                    Категория
+                                </legend>
 
-                        <h2 class="card-title h5">Процессор Orion X8</h2>
+                                <div class="form-check mb-2">
+                                    <input
+                                        class="form-check-input"
+                                        id="filter-all"
+                                        name="category"
+                                        type="checkbox"
+                                        value="all"
+                                        checked
+                                    >
 
-                        <p class="card-text text-muted">
-                            8 ядер, 16 потоков и частота до 5,2 ГГц.
-                            Модель для игровой или рабочей сборки.
-                        </p>
+                                    <label class="form-check-label" for="filter-all">
+                                        Все товары
+                                    </label>
+                                </div>
 
-                        <p class="fw-bold fs-5 mt-auto">24 900 руб.</p>
+                                <div class="form-check mb-2">
+                                    <input
+                                        class="form-check-input"
+                                        id="filter-popular"
+                                        name="category"
+                                        type="checkbox"
+                                        value="popular"
+                                    >
 
-                        <div class="d-flex flex-wrap gap-2">
-                            <a class="btn btn-primary" href="product.html">
-                                Подробнее
-                            </a>
+                                    <label
+                                        class="form-check-label"
+                                        for="filter-popular"
+                                    >
+                                        Популярные
+                                    </label>
+                                </div>
 
-                            <button
-                                class="btn btn-outline-primary"
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#orderModal"
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        id="filter-new"
+                                        name="category"
+                                        type="checkbox"
+                                        value="new"
+                                    >
+
+                                    <label class="form-check-label" for="filter-new">
+                                        Новинки
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="border rounded p-3 mb-3">
+                                <legend class="float-none w-auto fs-6 px-2">
+                                    Цена
+                                </legend>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="price-from">
+                                        От
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        id="price-from"
+                                        name="price-from"
+                                        type="number"
+                                        min="0"
+                                        step="1"
+                                        placeholder="0"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label class="form-label" for="price-to">
+                                        До
+                                    </label>
+
+                                    <input
+                                        class="form-control"
+                                        id="price-to"
+                                        name="price-to"
+                                        type="number"
+                                        min="0"
+                                        step="1"
+                                        placeholder="60000"
+                                    >
+                                </div>
+                            </fieldset>
+
+                            <div
+                                class="alert alert-danger"
+                                id="filterError"
+                                role="alert"
+                                hidden
                             >
-                                Проверка заявки
-                            </button>
-                        </div>
+                                Цена «От» не должна быть больше цены «До».
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-pink" type="submit">
+                                    Применить
+                                </button>
+
+                                <button
+                                    class="btn btn-outline-secondary"
+                                    type="reset"
+                                >
+                                    Сбросить
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                </article>
-            </div>
+                </div>
+            </aside>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="card h-100 shadow-sm">
-                    <div class="bg-light border-bottom p-4 text-center">
-                        <p class="h4 mb-1">NEBULA G16</p>
-                        <p class="text-muted mb-0">Видеокарта</p>
+            <section class="col-12 col-lg-9" aria-labelledby="productsTitle">
+                <h2 class="h4 mb-3" id="productsTitle">
+                    Список товаров
+                </h2>
+
+                <p class="text-muted" id="productsCount" aria-live="polite">
+                    Найдено товаров: 3
+                </p>
+
+                <div class="row g-4">
+                    <div
+                        class="col-12 col-md-6 col-xl-4"
+                        data-product-card
+                        data-price="24900"
+                        data-categories="new"
+                    >
+                        <article class="card h-100 shadow-sm">
+                            <div class="bg-light border-bottom p-4 text-center">
+                                <p class="h4 mb-1">ORION X8</p>
+                                <p class="text-muted mb-0">Процессор</p>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <span class="badge bg-success">
+                                        Новинка
+                                    </span>
+                                </div>
+
+                                <h3 class="card-title h5">
+                                    Процессор Orion X8
+                                </h3>
+
+                                <p class="card-text text-muted">
+                                    8 ядер, 16 потоков и частота до 5,2 ГГц.
+                                    Модель для игровой или рабочей сборки.
+                                </p>
+
+                                <p class="fw-bold fs-5 mt-auto">
+                                    24 900 руб.
+                                </p>
+
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a class="btn btn-pink" href="product.html">
+                                        Подробнее
+                                    </a>
+
+                                    <button
+                                        class="btn btn-pink"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#orderModal"
+                                    >
+                                        Проверка заявки
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="badge bg-warning text-dark">Хит</span>
-                        </div>
+                    <div
+                        class="col-12 col-md-6 col-xl-4"
+                        data-product-card
+                        data-price="54900"
+                        data-categories="popular"
+                    >
+                        <article class="card h-100 shadow-sm">
+                            <div class="bg-light border-bottom p-4 text-center">
+                                <p class="h4 mb-1">ABDULA G16 PRO</p>
+                                <p class="text-muted mb-0">Видеокарта</p>
+                            </div>
 
-                        <h2 class="card-title h5">Видеокарта Nebula G16</h2>
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <span class="badge bg-warning text-white">
+                                        Хит
+                                    </span>
+                                </div>
 
-                        <p class="card-text text-muted">
-                            16 ГБ видеопамяти и охлаждение с тремя
-                            вентиляторами для игровых сборок.
-                        </p>
+                                <h3 class="card-title h5">
+                                    Видеокарта Abdula G16 Pro
+                                </h3>
 
-                        <p class="fw-bold fs-5 mt-auto">54 900 руб.</p>
+                                <p class="card-text text-muted">
+                                    16 ГБ видеопамяти и охлаждение с тремя
+                                    вентиляторами для игровых сборок.
+                                </p>
 
-                        <div class="d-flex flex-wrap gap-2">
-                            <a class="btn btn-primary" href="order.html">
-                                Оформить заявку
-                            </a>
+                                <p class="fw-bold fs-5 mt-auto">
+                                    54 900 руб.
+                                </p>
 
-                            <button
-                                class="btn btn-outline-primary"
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#orderModal"
-                            >
-                                Проверка заявки
-                            </button>
-                        </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a
+                                        class="btn btn-pink"
+                                        href="product-abdula.html"
+                                    >
+                                        Подробнее
+                                    </a>
+
+                                    <button
+                                        class="btn btn-pink"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#orderModal"
+                                    >
+                                        Проверка заявки
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                </article>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="card h-100 shadow-sm">
-                    <div class="bg-light border-bottom p-4 text-center">
-                        <p class="h4 mb-1">PULSAR DDR5</p>
-                        <p class="text-muted mb-0">Оперативная память</p>
+                    <div
+                        class="col-12 col-md-6 col-xl-4"
+                        data-product-card
+                        data-price="9900"
+                        data-categories="discount"
+                    >
+                        <article class="card h-100 shadow-sm">
+                            <div class="bg-light border-bottom p-4 text-center">
+                                <p class="h4 mb-1">
+                                    LUCHICK 6 CLASSIC EDITION
+                                </p>
+                                <p class="text-muted mb-0">Оперативная память</p>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-3">
+                                    <span class="badge bg-danger">
+                                        Скидка
+                                    </span>
+                                </div>
+
+                                <h3 class="card-title h5">
+                                    Память Luchick 6 Classic Edition
+                                </h3>
+
+                                <p class="card-text text-muted">
+                                    Два модуля по 16 ГБ с частотой 6000 МГц.
+                                    Общий объём комплекта — 32 ГБ.
+                                </p>
+
+                                <p class="fw-bold fs-5 mt-auto">
+                                    9 900 руб.
+                                </p>
+
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a
+                                        class="btn btn-pink"
+                                        href="product-luchick.html"
+                                    >
+                                        Подробнее
+                                    </a>
+
+                                    <button
+                                        class="btn btn-pink"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#orderModal"
+                                    >
+                                        Проверка заявки
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
                     </div>
+                </div>
 
-                    <div class="card-body d-flex flex-column">
-                        <div class="mb-3">
-                            <span class="badge bg-danger">Скидка</span>
-                        </div>
-
-                        <h2 class="card-title h5">Память Pulsar DDR5</h2>
-
-                        <p class="card-text text-muted">
-                            Два модуля по 16 ГБ с частотой 6000 МГц.
-                            Общий объём комплекта — 32 ГБ.
-                        </p>
-
-                        <p class="fw-bold fs-5 mt-auto">9 900 руб.</p>
-
-                        <div class="d-flex flex-wrap gap-2">
-                            <a class="btn btn-primary" href="order.html">
-                                Оформить заявку
-                            </a>
-
-                            <button
-                                class="btn btn-outline-primary"
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#orderModal"
-                            >
-                                Проверка заявки
-                            </button>
-                        </div>
-                    </div>
-                </article>
-            </div>
+                <div
+                    class="alert alert-info mt-3"
+                    id="emptyResults"
+                    role="status"
+                    hidden
+                >
+                    По выбранным параметрам товары не найдены.
+                    Измени фильтры или нажми «Сбросить».
+                </div>
+            </section>
         </div>
     </main>
 
@@ -296,7 +485,7 @@
                     >
                         <div class="mb-3">
                             <label class="form-label" for="modal-name">
-                                Имя *
+                                Имя и фамилия *
                             </label>
 
                             <input
@@ -304,9 +493,11 @@
                                 id="modal-name"
                                 name="name"
                                 type="text"
-                                minlength="2"
-                                autocomplete="given-name"
-                                placeholder="Например, Алексей"
+                                minlength="3"
+                                autocomplete="name"
+                                placeholder="Иван Иванов"
+                                pattern="\s*\S+(\s+\S+)+\s*"
+                                title="Введите имя и фамилию через пробел"
                                 required
                             >
                         </div>
@@ -352,11 +543,11 @@
                                 <option value="orion-x8">
                                     Процессор Orion X8
                                 </option>
-                                <option value="nebula-g16">
-                                    Видеокарта Nebula G16
+                                <option value="abdula-g16-pro">
+                                    Видеокарта Abdula G16 Pro
                                 </option>
-                                <option value="pulsar-ddr5">
-                                    Память Pulsar DDR5
+                                <option value="luchick-6-classic-edition">
+                                    Память Luchick 6 Classic Edition
                                 </option>
                             </select>
                         </div>
@@ -396,7 +587,7 @@
                     </button>
 
                     <button
-                        class="btn btn-primary"
+                        class="btn btn-pink"
                         type="submit"
                         form="quickOrderForm"
                     >
@@ -407,8 +598,7 @@
         </div>
     </div>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/catalog.js"></script>
 </body>
 </html>

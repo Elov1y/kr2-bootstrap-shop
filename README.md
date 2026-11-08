@@ -52,3 +52,13 @@
 - использованы компоненты `navbar`, `card`, `btn`, `badge`, `alert`, `modal`, `form-control`, `input-group`, `form-check`, `accordion`;
 - добавлен файл `css/custom.css` для минимальных доработок;
 - проект подготовлен к сдаче контрольной работы №2.
+
+## Bootstrap
+
+На всех HTML-страницах подключён Bootstrap 5.3.8 через CDN:
+
+- Bootstrap CSS — сетка, оформление карточек, кнопок, форм и навигации;
+- Bootstrap JS Bundle — работа мобильного меню, выпадающего меню,
+  модального окна и Accordion.
+
+Собственные стили находятся в `css/custom.css` и подключаются после Bootstrap CSS.
