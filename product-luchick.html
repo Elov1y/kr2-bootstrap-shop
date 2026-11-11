@@ -6,10 +6,7 @@
 
     <title>Память Luchick 6 Classic Edition — Scoofyy PC</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
@@ -60,6 +57,7 @@
                         <a
                             class="nav-link active"
                             aria-current="page"
+                            data-last-product
                             href="product-luchick.html"
                         >
                             Товар
@@ -129,7 +127,12 @@
                         class="placeholder-image bg-light rounded p-4 d-flex flex-column align-items-center justify-content-center text-center"
                     >
                         <p class="display-6 fw-bold text-primary mb-2">
-                            LUCHICK 6 CLASSIC EDITION
+                            <img
+                            class="product-image rounded mb-3"
+                            src="images/luchick-6-ram.png" 
+                            alt="Два модуля оперативной памяти Luchick 6 Classic Edition"
+                            loading="lazy"
+                            >
                         </p>
 
                         <p class="text-muted mb-0">
@@ -399,5 +402,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/last-product.js"></script>
 </body>
 </html>
