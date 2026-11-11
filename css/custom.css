@@ -106,3 +106,20 @@ body {
     --bs-btn-disabled-bg: #ff9800;
     --bs-btn-disabled-border-color: #ff9800;
 }
+
+/* Изображения в каталоге и на главной */
+.product-image,
+.card-img-top.product-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Изображения на страницах товаров */
+.product-detail-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

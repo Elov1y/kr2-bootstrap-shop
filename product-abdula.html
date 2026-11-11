@@ -6,11 +6,7 @@
 
     <title>Abdula G16 Pro — Scoofyy PC</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
 
@@ -61,6 +57,7 @@
                         <a
                             class="nav-link active"
                             aria-current="page"
+                            data-last-product
                             href="product-abdula.html"
                         >
                             Товар
@@ -130,7 +127,12 @@
                         class="placeholder-image bg-light rounded p-4 d-flex flex-column align-items-center justify-content-center text-center"
                     >
                         <p class="display-6 fw-bold text-primary mb-2">
-                            ABDULA G16 PRO
+                            <img
+                                class="card-img-top product-image"
+                                src="images/abdula-g16-pro-graphics-card.png"
+                                alt="Видеокарта Abdula G16 Pro с тремя вентиляторами"
+                                loading="lazy"
+                            >
                         </p>
 
                         <p class="text-muted mb-0">
@@ -185,7 +187,7 @@
                             <td>Abdula G16</td>
                         </tr>
                         <tr>
-                            <th scope="row">Объяём видеопамяти</th>
+                            <th scope="row">Объём видеопамяти</th>
                             <td>16 ГБ</td>
                         </tr>
                         <tr>
@@ -400,5 +402,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/last-product.js"></script>
 </body>
 </html>
